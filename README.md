@@ -1,7 +1,7 @@
 # enews
 Enhanced News plugin (or addon) for E107. Part of the E series plugins (or addons)
 
-Adds new menus for the news plugin for E107 CMS system
+Adds new menus and rewrite old menus for the news plugin for E107 CMS system
 
 Still in beta development, but usable.
 

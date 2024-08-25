@@ -48,7 +48,7 @@ if(!empty($parm))
 
 e107::css('enews', 'usersnews_menu.css');
 
-e107::plugLan('enews', null);
+e107::lan('enews', null);
 //e107::css('news', 'news_carousel.css');
 //if(!$usersnews_STYLE)
 //{

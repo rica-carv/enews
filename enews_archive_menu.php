@@ -109,7 +109,7 @@ foreach($arr as $year=>$val)
 $start =  $template['start'];   
 $end = $template['end']; ;
 
-e107::plugLan('news');
+e107::lan('news');
 
 $caption = !empty($parm['caption'][e_LANGUAGE]) ? $parm['caption'][e_LANGUAGE] : LAN_NEWSARCHIVE_MENU_TITLE;
 

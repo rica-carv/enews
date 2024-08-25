@@ -15,7 +15,10 @@
  */
 
 if (!defined('e107_INIT')) { exit; }
-
+if (!e107::isInstalled('news'))
+{
+	return;
+}
 // Load Data
 /*
 if($cacheData = e107::getCache()->retrieve("nq_usersnews"))

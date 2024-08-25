@@ -8,7 +8,10 @@
 	 *
 	 */
 	if (!defined('e107_INIT')) { exit; }
-	
+    if (!e107::isInstalled('news'))
+    {
+        return;
+    }	
     $news   = e107::getObject('e_news_category_tree');  // get news class.
     $sc     = e107::getScBatch('news'); // get news shortcodes.
     $tp     = e107::getParser(); // get parser.

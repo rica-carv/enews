@@ -7,7 +7,12 @@
 	 * GNU General Public License (http://www.gnu.org/licenses/gpl.txt)
 	 *
 	 */
+if (!defined('e107_INIT'))  exit;
 
+if (!e107::isInstalled('news'))
+{
+	return;
+}
 
 $nw = e107::getObject('e_news_tree');
 $tp = e107::getParser();

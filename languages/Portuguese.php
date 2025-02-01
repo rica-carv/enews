@@ -12,7 +12,7 @@
 
 /* ENEWS */
 define("LAN_ENEWS_01", "Notícias publicadas");
-define("LAN_ENEWS_02", "Notícia mais recente publicada a ");
+define("LAN_ENEWS_02", "Última notícia publicada");
 
 /* LAN TABBED MENUS  */
 define("LAN_ENEWS_03", "Autores");

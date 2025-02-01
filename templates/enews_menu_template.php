@@ -14,22 +14,19 @@ $ENEWS_MENU_TEMPLATE['users']['start']		= "<div class='usersmenu inner'>"; // se
 $ENEWS_MENU_TEMPLATE['users']['item']		= '
 <div class="author">
 	<div class="row">
-		<div class="col-auto">
-		{NEWS_AUTHOR_AVATAR: class=rounded-circle me-3&w=40&h=40&crop=1&placeholder=1}
+		<div class="col-auto post-by-author-avatar">
+			<a href="{NEWS_AUTHOR_URL}">{NEWS_AUTHOR_AVATAR: class=rounded-circle me-3&w=50&h=50&crop=1&placeholder=1}</a>
 		</div>
 		<div class="col">
-			<div class="row">
-				<div class="col-auto align-self-start">
-				{NEWS_AUTHOR}
-				</div>
-				<div class="col align-self-end">
-				<a class="icon-link link-info float-end" href="{NEWS_AUTHOR_ITEMS_URL}">{GLYPH=fa-newspaper}&nbsp;&nbsp;{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_ENEWS_01}</a>
-				</div>
-			</div>
-			<div class="row"><a class="link-primary" href="{NEWS_URL}">{LAN=LAN_ENEWS_02}{NEWS_DATE=short}</a></div>
+			{NEWS_AUTHOR}
+			<br>
+			<a class="icon-link link-info" href="{NEWS_AUTHOR_ITEMS_URL}" data-bs-toggle="tooltip" title="{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_ENEWS_01}">{GLYPH=fa-newspaper}&nbsp;{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_PLUGIN_NEWS_NAME}</a>
+			<br>
+			<a class="link-primary" href="{NEWS_URL}" data-bs-toggle="tooltip" title="{LAN=LAN_ENEWS_02}:&nbsp;{NEWS_TITLE}">{GLYPH=fa-calendar-week}&nbsp;{LAN=LAN_ENEWS_02}</a>
 		</div>
 	</div>
-</div>';
+</div>
+';
 $ENEWS_MENU_TEMPLATE['users']['end']			= "</div>";
 
 $ENEWS_MENU_TEMPLATE['tabbed']			= "<div class='tabs-wrapper'> 

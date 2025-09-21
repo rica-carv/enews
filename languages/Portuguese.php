@@ -9,7 +9,7 @@
 |        $Author: Rica-Carv $
 +---------------------------------------------------------------+
 */
-
+define("LAN_ENEWS_FULLNAME", "Enews - E107 News (Extensão)");
 /* ENEWS */
 define("LAN_ENEWS_01", "Notícias publicadas");
 define("LAN_ENEWS_02", "Última notícia publicada");

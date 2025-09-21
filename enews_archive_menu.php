@@ -19,6 +19,8 @@ $tp = e107::getParser();
 
 $nparm = array('db_limit' => 350 );
 
+e107::lan('news');
+
 $tmp = $nw->loadJoinActive(0, false, $nparm)->toArray();
 
 $monthLabels = e107::getDate()->terms();
@@ -106,14 +108,9 @@ foreach($arr as $year=>$val)
 
 }
 
-$start =  $template['start'];   
-$end = $template['end']; ;
-
-e107::lan('news');
-
 $caption = !empty($parm['caption'][e_LANGUAGE]) ? $parm['caption'][e_LANGUAGE] : LAN_NEWSARCHIVE_MENU_TITLE;
 
-e107::getRender()->tablerender($caption, $start.$text.$end, 'news-archive-menu');
+e107::getRender()->tablerender($caption, $template['start'].$text.$template['end'], 'news-archive-menu');
 
 
 //e107::getDebug()->log($arr);

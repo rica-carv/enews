@@ -27,10 +27,10 @@ if($cacheData = e107::getCache()->retrieve("nq_usersnews"))
 	return;
 }
 */
-require_once(e_HANDLER."news_class.php");
+//require_once(e_HANDLER."news_class.php");
 unset($text);
 /////global $usersnews_STYLE;
-$ix = new news;
+//$ix = new news;
 
 //$caption = TD_MENU_L1;
 
@@ -162,8 +162,8 @@ WHERE n.news_class IN (".USERCLASS_LIST.") AND n.news_start < ".$_t." AND (n.new
 */
 $query = "SELECT u.user_id, u.user_name, u.user_customtitle, r.*, n.* 
     FROM #user AS u 
-    LEFT JOIN (SELECT n.news_author, COUNT(n.news_id) AS totalnews, MAX(n.news_id) as latestnews FROM #news AS n
-      GROUP BY n.news_author) AS r ON u.user_id = news_author
+    LEFT JOIN (SELECT news_author, COUNT(news_id) AS totalnews, MAX(news_id) as latestnews FROM #news 
+		WHERE news_class IN (101,102,253,254,250,251,0) GROUP BY news_author) AS r ON u.user_id = news_author
       LEFT JOIN #news as n ON r.latestnews = n.news_id
       WHERE n.news_id <> '' AND n.news_class IN (".USERCLASS_LIST.")
 	  ORDER BY n.news_datestamp DESC LIMIT 0,".usersnews_LIMIT;
@@ -208,6 +208,9 @@ if ($sql->gen($query))
 	{
 */
 //		$active = 'active';		
+
+require_once(e_HANDLER."news_class.php");
+$ix = new news;
 		while ($row = $sql->fetch()) 
 		{
 //			var_dump ($template);
@@ -223,10 +226,10 @@ if ($sql->gen($query))
 	$text .= $tp->parseTemplate($template['end'], true);
 
 	// Save Data
-	ob_start();
+//	ob_start();
 
 	$ns->tablerender($caption, $text, 'users_news');
 
-	$cache_data = ob_get_flush();
-	e107::getCache()->set("nq_usersnews", $cache_data);
+//	$cache_data = ob_get_flush();
+//	e107::getCache()->set("nq_usersnews", $cache_data);
 }

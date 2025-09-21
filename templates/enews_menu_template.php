@@ -20,7 +20,7 @@ $ENEWS_MENU_TEMPLATE['users']['item']		= '
 		<div class="col">
 			{NEWS_AUTHOR}
 			<br>
-			<a class="icon-link link-info" href="{NEWS_AUTHOR_ITEMS_URL}" data-bs-toggle="tooltip" title="{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_ENEWS_01}">{GLYPH=fa-newspaper}&nbsp;{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_PLUGIN_NEWS_NAME}</a>
+			<a class="icon-link link-info" href="{NEWS_AUTHOR_ITEMS_URL}" data-bs-toggle="tooltip" title="{NEWS_AUTHOR_COUNT}&nbsp;{LAN=LAN_ENEWS_01}">{GLYPH=fa-newspaper}{LAN=LAN_PLUGIN_NEWS_NAME}<span class="badge">{NEWS_AUTHOR_COUNT}</span></a>
 			<br>
 			<a class="link-primary" href="{NEWS_URL}" data-bs-toggle="tooltip" title="{LAN=LAN_ENEWS_02}:&nbsp;{NEWS_TITLE}">{GLYPH=fa-calendar-week}&nbsp;{LAN=LAN_ENEWS_02}</a>
 		</div>
@@ -29,7 +29,10 @@ $ENEWS_MENU_TEMPLATE['users']['item']		= '
 ';
 $ENEWS_MENU_TEMPLATE['users']['end']			= "</div>";
 
-$ENEWS_MENU_TEMPLATE['tabbed']			= "<div class='tabs-wrapper'> 
+// Tabbednews menu
+/*
+$ENEWS_MENU_TEMPLATE['tabbed']			= "
+<div class='tabs-wrapper'> 
 <ul class='nav nav-tabs'>
   <li class='nav-item'><a class='active tab-1 nav-link' href='#tab-1' data-bs-toggle='tab'>{LAN=LAN_ENEWS_03}</a></li>
   <li><a class='tab-2 nav-link' href='#tab-2' data-bs-toggle='tab'>{LAN=LAN_ENEWS_04}</a></li>
@@ -53,3 +56,34 @@ $ENEWS_MENU_TEMPLATE['tabbed']			= "<div class='tabs-wrapper'>
   </div>
 </div>
 </div>";
+*/
+$ENEWS_MENU_TEMPLATE['tabbed']			= "
+<div class='card with-nav-tabs bg-light h-100'>
+	<div class='card-header'>
+		<ul class='nav nav-tabs card-header-tabs'>
+			<li class='nav-item'><a class='active tab-1 nav-link' href='#tab-1' data-bs-toggle='tab'>{LAN=LAN_ENEWS_03}</a></li>
+  			<li><a class='tab-2 nav-link' href='#tab-2' data-bs-toggle='tab'>{LAN=LAN_ENEWS_04}</a></li>
+  			<li><a class='tab-3 nav-link' href='#tab-3' data-bs-toggle='tab'>{LAN=LAN_ENEWS_05}</a></li>
+		</ul>
+	</div>
+	<div class='card-body bg-white'>
+		<div class='tab-content'>
+			<div id='tab-1' class='tab-pane fade show active'>
+				{SETSTYLE=tabbedmenu}
+				{MENU: path=enews/usersnews}
+				{MENU=20} 
+  			</div>
+  			<div id='tab-2' class='tab-pane fade'>
+				{SETSTYLE=tabbedmenu}
+				{MENU: path=news/other_news2}
+				{MENU=21}  
+  			</div>
+  			<div id='tab-3' class='tab-pane fade'>
+				{SETSTYLE=tabbedmenu}
+				{MENU: path=comment/comment}
+				{MENU=22} 
+  			</div>
+		</div>
+	</div>
+</div>
+";

@@ -33,7 +33,7 @@ if($cacheData = e107::getCache()->retrieve("nq_usersnews"))
 //$ix = new news;
 
 //$caption = TD_MENU_L1;
-
+/*
 if(!empty($parm))
 {
 	if(is_string($parm))
@@ -45,7 +45,7 @@ if(!empty($parm))
 		$parms = $parm;
 	}
 }
-
+*/
 //e107::css('enews', 'usersnews_menu.css');
 
 //e107::plugLan('enews', null);
@@ -139,10 +139,12 @@ if(!defined("usersnews_SPACING")){
 	define("usersnews_SPACING","0");
 }
 */
+/*
 if(!isset($param))
 {
 	$param = array();
 }
+*/
 /*
 $param['itemlink'] 		= defset('usersnews_ITEMLINK');
 $param['thumbnail'] 	= defset('usersnews_THUMB');
@@ -240,9 +242,10 @@ if ($sql->gen($query))
 $text = e107::getParser()->parseTemplate($template ,true);
 
 	// Save Data
-	ob_start();
+//	ob_start();
 
 	$ns->tablerender($caption, $text, 'users_news');
-
+/*
 	$cache_data = ob_get_flush();
-	e107::getCache()->set("nq_usersnews", $cache_data);
+	e107::getCache()->set("nq_tabnews", $cache_data);
+*/

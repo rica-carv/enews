@@ -12,13 +12,13 @@
     {
         return;
     }	
-    $news   = e107::getObject('e_news_category_tree');  // get news class.
+//    $news   = ;  // get news class.
     $sc     = e107::getScBatch('news'); // get news shortcodes.
     $tp     = e107::getParser(); // get parser.
 //    var_dump($sc);
 
     // load active news categories. ie. the correct userclass etc.
-    $data = $news->loadActive(false)->toArray();  // false to utilize the built-in cache.
+    $data = e107::getObject('e_news_category_tree')->loadActive(false)->toArray();  // false to utilize the built-in cache.
 
 	$parms['tmpl']      = 'news_menu';
 	$parms['tmpl_key']  = 'category';
